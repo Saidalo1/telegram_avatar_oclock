@@ -4,6 +4,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 from config import WIDTH, HEIGHT, BACKGROUND_COLOR, FONT_SIZE, TEXT_COLOR
 
+# Load font when start script
+font = ImageFont.truetype('arial.ttf', FONT_SIZE)
+
 
 def generate_image():
     # Create an image with a black background
@@ -12,10 +15,7 @@ def generate_image():
     # Get the current time in Tashkent
     tz_offset = datetime.timedelta(hours=5)  # Timezone offset
     time_tashkent = datetime.datetime.utcnow() + tz_offset
-    formatted_time = f"You will see this image at \n             {time_tashkent.strftime('%H:%M')}"
-
-    # Create a Font object for the selected font
-    font = ImageFont.truetype('arial.ttf', FONT_SIZE)
+    formatted_time = f" You will see this image at \n                {time_tashkent.strftime('%H:%M')}"
 
     # Create a Draw object for drawing on the image
     draw = ImageDraw.Draw(image)
@@ -38,5 +38,5 @@ def set_profile_photo(api_client, image):
 
 def save_image(image):
     temp_path = "avatar_image.jpg"
-    image.save(temp_path)
+    image.save(temp_path, format='JPEG')  # Use JPEG format for optimization
     return temp_path

@@ -39,9 +39,9 @@ def generate_image() -> Image:
     return image
 
 
-def set_profile_photo(api_client: Client, image):
+async def set_profile_photo(api_client: Client, image):
     # Set the profile photo using Pyrogram API
-    api_client.set_profile_photo(photo=image)
+    await api_client.set_profile_photo(photo=image)
 
 
 def save_image(image) -> str:
@@ -50,16 +50,16 @@ def save_image(image) -> str:
     return temp_path
 
 
-def set_profile_name_and_bio(api_client: Client, nickname: str, bio: str):
+async def set_profile_name_and_bio(api_client: Client, nickname: str, bio: str):
     # Configure profile's nickname and bio
     nickname += f" | ⏰{time_tashkent().strftime('%H:%M')}"
     bio += f" | ⏰{time_tashkent().strftime('%H:%M')}"
 
     # Update profile
-    api_client.update_profile(nickname, bio=bio)
+    await api_client.update_profile(nickname, bio=bio)
 
 
-def delete_all_photos_of_profile(api_client: Client):
+async def delete_all_photos_of_profile(api_client: Client):
     # Get all photo of profile
     photos_count = await api_client.get_chat_photos_count('me')
     photos = api_client.get_chat_photos('me', photos_count)

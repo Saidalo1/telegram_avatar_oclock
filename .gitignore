@@ -259,7 +259,7 @@ cython_debug/
 .idea/
 
 # sessions
-my_bot.session
+Saidalo.session
 
 # image
 avatar_image.jpg

@@ -15,3 +15,7 @@ HEIGHT = 640
 BACKGROUND_COLOR = (0, 0, 0)  # Black background color
 FONT_SIZE = 54
 TEXT_COLOR = (0, 255, 0)  # Green text color
+
+# Your telegram nickname
+nickname = os.getenv("TELEGRAM_NICKNAME")
+bio = os.getenv("TELEGRAM_BIO")

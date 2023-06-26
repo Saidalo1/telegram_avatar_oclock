@@ -5,7 +5,8 @@ from PIL import Image, ImageDraw, ImageFont
 from config import WIDTH, HEIGHT, BACKGROUND_COLOR, FONT_SIZE, TEXT_COLOR
 
 # Load font when start script
-font = ImageFont.truetype('arial.ttf', FONT_SIZE)
+font_path = "/root/scripts/telegram_avatar_oclock/fonts/arial.ttf"  # Замените на ваш абсолютный путь к шрифту
+font = ImageFont.truetype(font_path, FONT_SIZE)
 
 
 def generate_image():

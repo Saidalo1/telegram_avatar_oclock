@@ -6,7 +6,7 @@ from pyrogram import Client
 from config import WIDTH, HEIGHT, BACKGROUND_COLOR, FONT_SIZE, TEXT_COLOR
 
 # Load font when start script
-font_path = "/root/scripts/telegram_avatar_oclock/fonts/arial.ttf"
+font_path = "/opt/telegram_avatar_oclock/fonts/arial.ttf"
 font = ImageFont.truetype(font_path, FONT_SIZE)
 
 
